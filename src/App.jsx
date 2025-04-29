@@ -8,8 +8,8 @@ export default function App() {
   function AvailableEpisodes() {
     return (
       <div id="episodeContainer">
-        <h1>Available Episodes</h1>
-        <ul id="Episodes">
+        <h1 id="availableEpi">Available Episodes</h1>
+        <ol id="Episodes">
           {episodes.map((episode) => (
             <li 
               key={episode.id} 
@@ -19,7 +19,7 @@ export default function App() {
               {episode.title}
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
     );
   }
@@ -29,10 +29,12 @@ export default function App() {
       <div id="selectedEpisode">
         {selectedEpisode ? ( // Render only if an episode is selected
           <>
-            <h2>Selected Episode:</h2>
-            <h3>This is Episode {selectedEpisode.id}</h3>
-            <p>{selectedEpisode.title}</p>
-            <p>{selectedEpisode.description}</p>
+            <div id="Container2">
+              <h2>Selected Episode:</h2>
+              <h3>This is Episode {selectedEpisode.id}</h3>
+              <p>{selectedEpisode.title}</p>
+              <p>{selectedEpisode.description}</p>
+            </div>
           </>
         ) : (
           <p>No episode selected. Click an episode to view details!</p>
@@ -44,9 +46,9 @@ export default function App() {
   return (
     <>
       <header>
-        <h1>Episodes</h1>
+        <h1 id="seriesTitle">Dark Echos!</h1>
       </header>
-      <main>
+      <main id="Container1">
         <AvailableEpisodes />
         <SelectedEpisode />
       </main>
